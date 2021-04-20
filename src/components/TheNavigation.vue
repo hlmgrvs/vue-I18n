@@ -1,23 +1,26 @@
 <template>
   <div class="nav">
     <h1>GloboShop</h1>
-    <router-link to="/items">Items</router-link>
-    <router-link to="/about">About us</router-link>
+    <router-link to="/items">{{ t("routes.items") }}</router-link>
+    <router-link to="/about">{{ t("routes.about") }}</router-link>
   </div>
 </template>
 
 <script>
-import { useStore } from "vuex";
-import { computed } from "vue";
+import {useStore} from "vuex";
+import {computed} from "vue";
+import {useI18n} from "vue-i18n"
 
 export default {
   setup() {
+    const {t} = useI18n();
     const store = useStore();
     const numOfitemsInCart = computed(
-      () => store.state.numOfitemsInCart
+        () => store.state.numOfitemsInCart
     );
 
     return {
+      t,
       numOfitemsInCart
     };
   }
