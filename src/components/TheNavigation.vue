@@ -3,6 +3,7 @@
     <h1>GloboShop</h1>
     <router-link to="/items">{{ t("routes.items") }}</router-link>
     <router-link to="/about">{{ t("routes.about") }}</router-link>
+    <the-language-picker></the-language-picker>
   </div>
 </template>
 
@@ -10,8 +11,10 @@
 import {useStore} from "vuex";
 import {computed} from "vue";
 import {useI18n} from "vue-i18n"
+import TheLanguagePicker from "@/components/TheLanguagePicker";
 
 export default {
+  components: {TheLanguagePicker},
   setup() {
     const {t} = useI18n();
     const store = useStore();
@@ -20,6 +23,7 @@ export default {
     );
 
     return {
+      TheLanguagePicker,
       t,
       numOfitemsInCart
     };
@@ -76,6 +80,11 @@ export default {
 
   .nav a {
     display: block;
+  }
+
+  .nav select {
+    padding: 14px 16px;
+    margin: 20px;
   }
 }
 </style>
