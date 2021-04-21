@@ -11,7 +11,11 @@ const messages = {
             subtotal: "Kopā",
             clearButton: "Izņemt preci"
         },
-        popularItem: "Vispopulārākā prece šajā veikalā ir {itm}, vismaz uz kādu laiku."
+        aboutUs: {
+            firstParagraph: "Uzzināt @.lower:routes.about vairāk",
+            secondParagraph: "Mazā kompānija ar lieliem planiem",
+            popularItem: "Vispopulārākā prece šajā veikalā ir {itm}, vismaz uz kādu laiku."
+        },
     },
     ru: {
         routes: {
@@ -23,7 +27,11 @@ const messages = {
             subtotal: "Итого",
             clearButton: "Удалить товар"
         },
-        popularItem: "Самый популярный товар в нашем магазине - {itm}, но это не на долго."
+        aboutUs: {
+            firstParagraph: "Узнать @.lower:routes.about больше",
+            secondParagraph: "Маленькая компания с большими планами",
+            popularItem: "Самый популярный товар в нашем магазине - {itm}, но это не на долго."
+        },
     },
 }
 
