@@ -2,7 +2,7 @@
   <div class="col" v-for="item in items" :key="item.id">
     <div class="item">
       <h3>{{ item.title }}</h3>
-      <p>${{ item.price }}</p>
+      <p>{{ n(item.price, "currencyFormat") }}</p>
       <p
         class="description"
       >{{ truncateDescription(item.description, 70) }}</p>
@@ -15,11 +15,12 @@
 <script>
 import { useStore } from "vuex";
 import { computed } from "vue";
+import {useI18n} from "vue-i18n";
 
 export default {
   setup() {
     const store = useStore();
-
+    const {n} = useI18n();
     const items = computed(
       () => store.getters.items
     );
@@ -33,6 +34,7 @@ export default {
         : desc;
 
     return {
+      n,
       items,
       addItemToCart,
       truncateDescription

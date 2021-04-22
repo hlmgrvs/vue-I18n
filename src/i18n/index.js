@@ -1,5 +1,23 @@
 import {createI18n} from "vue-i18n";
 
+const numberFormats = {
+    lv: {
+        currencyFormat: {
+            style: "currency",
+            currency: "EUR",
+            currencyDisplay: "symbol"
+        },
+    },
+    ru: {
+        currencyFormat: {
+            style: "currency",
+            currency: "RUB",
+            currencyDisplay: "symbol"
+        }
+
+    }
+}
+
 const messages = {
     lv: {
         routes: {
@@ -40,5 +58,6 @@ export default createI18n({
     legacy: false,
     fallbackLocale: "lv",
     globalInjection: true,
-    messages
+    messages,
+    numberFormats
 });
