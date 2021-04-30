@@ -7,7 +7,8 @@ export default {
         cart: {
             cart: "Grozs",
             subtotal: "Kopā",
-            clearButton: "Izņemt preci"
+            clearButton: "Izdzest",
+            item: "{n} prece | {n} preces"
         },
         aboutUs: {
             firstParagraph: "Uzzināt @.lower:routes.about vairāk",
@@ -26,7 +27,8 @@ export default {
         cart: {
             cart: "Корзина",
             subtotal: "Итого",
-            clearButton: "Удалить товар"
+            clearButton: "Удалить",
+            item: "0 товаров | {n} товар | {n} товара | {n} товаров"
         },
         aboutUs: {
             firstParagraph: "Узнать @.lower:routes.about больше",
