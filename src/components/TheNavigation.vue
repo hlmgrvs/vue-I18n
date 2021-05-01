@@ -1,8 +1,8 @@
 <template>
   <div class="nav">
     <h1>GloboShop</h1>
-    <router-link to="/items">{{ t("routes.items") }}</router-link>
-    <router-link to="/about">{{ t("routes.about") }}</router-link>
+    <router-link :to="`/${locale}/items`">{{ t("routes.items") }}</router-link>
+    <router-link :to="`/${locale}/about`">{{ t("routes.about") }}</router-link>
     <the-language-picker></the-language-picker>
   </div>
 </template>
@@ -16,7 +16,7 @@ import TheLanguagePicker from "@/components/TheLanguagePicker";
 export default {
   components: {TheLanguagePicker},
   setup() {
-    const {t} = useI18n();
+    const { t, locale } = useI18n();
     const store = useStore();
     const numOfitemsInCart = computed(
         () => store.state.numOfitemsInCart
@@ -25,6 +25,7 @@ export default {
     return {
       TheLanguagePicker,
       t,
+      locale,
       numOfitemsInCart
     };
   }

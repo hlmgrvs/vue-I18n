@@ -11,12 +11,17 @@
 <script>
 import { useI18n } from "vue-i18n";
 import { watch } from "vue";
+import { useRouter } from "vue-router";
 
 export default {
   setup() {
     const { locale, availableLocales } = useI18n();
+    const router = useRouter();
 
     watch(locale, (newLocale) => {
+      router.replace({ params: { locale: newLocale } }).catch(() => {
+        router.push("/");
+      });
       localStorage.setItem("locale", newLocale);
     });
 
