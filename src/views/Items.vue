@@ -16,7 +16,7 @@
           class="description"
       >{{ truncateDescription(item.description, 70) }}</p>
       <p>{{$t('items.posted')}}: {{ d(item.date, "shortFormat") }}</p>
-      <button @click="addItemToCart(item.id)">Add to cart</button>
+      <button @click="addItemToCart(item.id)">{{t("items.addToCart")}}</button>
     </div>
   </div>
 </template>

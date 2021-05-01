@@ -4,29 +4,46 @@ import numberFormats from "@/i18n/numberFormats";
 import datetimeFormats from "@/i18n/datetimeFormats"
 import pluralRules from "@/i18n/pluralRules";
 
-function customRule(choice, choicesLength, orgRule) {
-    if (choice === 0) {
-        return 0
+const DEFAULT_LOCALE = 'lv'
+
+const extractLanguage = locale => {
+    return locale.split("-")[0];
+};
+
+function getDefaultLocale() {
+    const availableLocales = Reflect.ownKeys(
+        messages
+    );
+    const navigatorLocale = navigator.language;
+
+    if (
+        availableLocales.includes(navigatorLocale)
+    ) {
+        return navigatorLocale;
     }
 
-    const teen = choice > 10 && choice < 20
-    const endsWithOne = choice % 10 === 1
-    if (!teen && endsWithOne) {
-        return 1
-    }
-    if (!teen && choice % 10 >= 2 && choice % 10 <= 4) {
-        return 2
+    const navigatorLang = extractLanguage(
+        navigatorLocale
+    );
+
+    if (navigatorLocale.split("-").length > 1) {
+        if (
+            availableLocales.includes(navigatorLang)
+        ) {
+            return navigatorLang;
+        }
     }
 
-    return choicesLength < 4 ? 2 : 3
+    const fallback = availableLocales.find(
+        locale =>
+            extractLanguage(locale) === navigatorLang
+    );
+
+    return fallback ? fallback : DEFAULT_LOCALE;
 }
-
 export default createI18n({
-    locale: "lv",
-    pluralizationRules: {
-        ru: customRule
-    },
-    legacy: true,
+    locale: getDefaultLocale(),
+    legacy: false,
     fallbackLocale: "lv",
     globalInjection: true,
     messages,

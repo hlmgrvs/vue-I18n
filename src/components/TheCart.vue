@@ -11,11 +11,7 @@
       :style="{display: cartVisible ? 'block': 'none'}"
     >
       <h3 class="col numOfItems">
-<<<<<<< HEAD
         {{$t("cart.item", numOfItemsInCart)}}
-=======
-        {{$tc("cart.item", numOfItemsInCart)}}
->>>>>>> ae3281806abc504a9e22af3771d3788e8d318237
       </h3>
       <h3 class="col">{{$t("cart.subtotal")}}: ${{ $n(subtotal, "currencyFormat") }}</h3>
       <div class="col" v-for="item in itemsInCart" :key="item.id">

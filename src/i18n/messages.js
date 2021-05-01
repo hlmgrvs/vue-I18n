@@ -7,13 +7,8 @@ export default {
         cart: {
             cart: "Grozs",
             subtotal: "Kopā",
-<<<<<<< HEAD
             clearButton: "Izdzēst",
             item: "{n} prece | {n} preces | {n} preces"
-=======
-            clearButton: "Izdzest",
-            item: "{n} prece | {n} preces"
->>>>>>> ae3281806abc504a9e22af3771d3788e8d318237
         },
         aboutUs: {
             firstParagraph: "Uzzināt @.lower:routes.about vairāk",
@@ -21,7 +16,8 @@ export default {
             popularItem: "Vispopulārākā prece šajā veikalā ir {itm}, vismaz uz kādu laiku."
         },
         items: {
-            posted: "Publicēts"
+            posted: "Publicēts",
+            addToCart: "Pievienot grozam"
         }
     },
     ru: {
@@ -32,13 +28,9 @@ export default {
         cart: {
             cart: "Корзина",
             subtotal: "Итого",
-<<<<<<< HEAD
             clearButton: "Очистить",
             item: "{n} товар | {n} товара | {n} товаров"
-=======
-            clearButton: "Удалить",
-            item: "0 товаров | {n} товар | {n} товара | {n} товаров"
->>>>>>> ae3281806abc504a9e22af3771d3788e8d318237
+
         },
         aboutUs: {
             firstParagraph: "Узнать @.lower:routes.about больше",
@@ -46,7 +38,8 @@ export default {
             popularItem: "Самый популярный товар в нашем магазине - {itm}, но это не на долго."
         },
         items: {
-            posted: "Опубликовано"
+            posted: "Опубликовано",
+            addToCart: "Добавить в корзину"
         }
     },
 }
