@@ -1,8 +1,8 @@
-import {createI18n} from "vue-i18n";
-import messages from "@/i18n/messages";
-import numberFormats from "@/i18n/numberFormats";
-import datetimeFormats from "@/i18n/datetimeFormats"
-import pluralRules from "@/i18n/pluralRules";
+import { createI18n } from "vue-i18n";
+import messages from "./messages.js";
+import numberFormats from "./numberFormats.js";
+import datetimeFormats from "./datetimeFormats.js";
+import pluralRules from "./pluralRules.js";
 
 const DEFAULT_LOCALE = 'lv'
 
@@ -11,6 +11,14 @@ const extractLanguage = locale => {
 };
 
 function getDefaultLocale() {
+    const persistedLocale = localStorage.getItem(
+        "locale"
+    );
+
+    if (persistedLocale) {
+        return persistedLocale;
+    }
+
     const availableLocales = Reflect.ownKeys(
         messages
     );
