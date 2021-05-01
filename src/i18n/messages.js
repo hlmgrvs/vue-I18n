@@ -7,8 +7,13 @@ export default {
         cart: {
             cart: "Grozs",
             subtotal: "Kopā",
+<<<<<<< HEAD
             clearButton: "Izdzēst",
             item: "{n} prece | {n} preces | {n} preces"
+=======
+            clearButton: "Izdzest",
+            item: "{n} prece | {n} preces"
+>>>>>>> ae3281806abc504a9e22af3771d3788e8d318237
         },
         aboutUs: {
             firstParagraph: "Uzzināt @.lower:routes.about vairāk",
@@ -27,8 +32,13 @@ export default {
         cart: {
             cart: "Корзина",
             subtotal: "Итого",
+<<<<<<< HEAD
             clearButton: "Очистить",
             item: "{n} товар | {n} товара | {n} товаров"
+=======
+            clearButton: "Удалить",
+            item: "0 товаров | {n} товар | {n} товара | {n} товаров"
+>>>>>>> ae3281806abc504a9e22af3771d3788e8d318237
         },
         aboutUs: {
             firstParagraph: "Узнать @.lower:routes.about больше",
