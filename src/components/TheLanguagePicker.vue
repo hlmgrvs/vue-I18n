@@ -22,6 +22,7 @@ export default {
       router.replace({ params: { locale: newLocale } }).catch(() => {
         router.push("/");
       });
+      document.querySelector('html').setAttribute('lang', newLocale);
       localStorage.setItem("locale", newLocale);
     });
 

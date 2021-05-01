@@ -49,6 +49,9 @@ function getDefaultLocale() {
 
     return fallback ? fallback : DEFAULT_LOCALE;
 }
+
+document.querySelector('html').setAttribute('lang', getDefaultLocale())
+
 export default createI18n({
     locale: getDefaultLocale(),
     legacy: false,
